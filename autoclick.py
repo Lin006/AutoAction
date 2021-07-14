@@ -9,7 +9,7 @@ chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-browser = webdriver.Chrome("C:\Users\林先冠\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GoogleChrome")
+b\AppData\Roaming\Microsoft\Windows\StaMenu\Programs\GoogleChrome")
 
 
 
@@ -51,9 +51,9 @@ def situyun():
     # 格式是PEP8自动转的
     # 这里是找到输入框,发送要输入的用户名和密码,模拟登陆
     browser.find_element_by_xpath(
-        "//*[@id='email']").send_keys(os.environ['1810010214'])
+        "//*[@id='email']").send_keys(os.environ[''])
     browser.find_element_by_xpath(
-        "//*[@id='password']").send_keys(os.environ['5200138lin'])
+        "//*[@id='password']").send_keys(os.environ[''])
     
     browser.find_element_by_xpath("//*[@id='app']/section/div/div/div/div[2]/form/div/div[5]/button").click()
     time.sleep(10)
