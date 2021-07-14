@@ -1,25 +1,23 @@
 import os
-# 方便延时加载
+
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-# 模拟浏览器打开网站
+
 chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-browser = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options)
-#window电脑本地
-# browser = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver")
+browser = webdriver.Chrome("C:\Users\林先冠\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\GoogleChrome")
 
 
 
 def scut():
-    browser.get('https://sso.scut.edu.cn/cas/login?service=https%3A%2F%2Fiamok.scut.edu.cn%2Fcas%2Flogin')
-    # 将窗口最大化
+    browser.get('http://xgfx.bnuz.edu.cn/xsdtfw/sys/emapfunauth/pages/welcome.do?service=%2Fxsdtfw%2Fsys%2Fswmxsyqxxsjapp%2F*default%2Findex.do%3FwxType%3D1#/mrbpa')
+   
     browser.maximize_window()
-    # 格式是PEP8自动转的
+   
     # 这里是找到输入框,发送要输入的用户名和密码,模拟登陆
     browser.find_element_by_xpath(
         "//*[@id='un']").send_keys(os.environ['SCUT_USER'])
@@ -48,15 +46,15 @@ def saveFile(message):
 
 def situyun():
     browser.get('http://situcloud.xyz/auth/login')
-    # 将窗口最大化
+    
     browser.maximize_window()
     # 格式是PEP8自动转的
     # 这里是找到输入框,发送要输入的用户名和密码,模拟登陆
     browser.find_element_by_xpath(
-        "//*[@id='email']").send_keys(os.environ['SITUYUN_USER'])
+        "//*[@id='email']").send_keys(os.environ['1810010214'])
     browser.find_element_by_xpath(
-        "//*[@id='password']").send_keys(os.environ['SITUYUN_PASSWORD'])
-    # 在输入用户名和密码之后,点击登陆按钮
+        "//*[@id='password']").send_keys(os.environ['5200138lin'])
+    
     browser.find_element_by_xpath("//*[@id='app']/section/div/div/div/div[2]/form/div/div[5]/button").click()
     time.sleep(10)
     try:
